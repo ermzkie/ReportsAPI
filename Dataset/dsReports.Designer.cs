@@ -287,6 +287,10 @@ namespace WebApplication1.Dataset {
             
             private global::System.Data.DataColumn columnaf_gwa;
             
+            private global::System.Data.DataColumn columnprogid;
+            
+            private global::System.Data.DataColumn columnprog_abb;
+            
             private global::System.Data.DataColumn columncatid;
             
             private global::System.Data.DataColumn columncat_code;
@@ -423,6 +427,22 @@ namespace WebApplication1.Dataset {
             public global::System.Data.DataColumn af_gwaColumn {
                 get {
                     return this.columnaf_gwa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn progidColumn {
+                get {
+                    return this.columnprogid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn prog_abbColumn {
+                get {
+                    return this.columnprog_abb;
                 }
             }
             
@@ -762,6 +782,8 @@ namespace WebApplication1.Dataset {
             public tblApplicationFormRow AddtblApplicationFormRow(
                         string af_ref_no, 
                         decimal af_gwa, 
+                        string progid, 
+                        string prog_abb, 
                         string cat_code, 
                         string course_abb, 
                         int year_level, 
@@ -802,6 +824,8 @@ namespace WebApplication1.Dataset {
                         af_ref_no,
                         null,
                         af_gwa,
+                        progid,
+                        prog_abb,
                         null,
                         cat_code,
                         course_abb,
@@ -872,6 +896,8 @@ namespace WebApplication1.Dataset {
                 this.columnaf_ref_no = base.Columns["af_ref_no"];
                 this.columnstudent_id = base.Columns["student_id"];
                 this.columnaf_gwa = base.Columns["af_gwa"];
+                this.columnprogid = base.Columns["progid"];
+                this.columnprog_abb = base.Columns["prog_abb"];
                 this.columncatid = base.Columns["catid"];
                 this.columncat_code = base.Columns["cat_code"];
                 this.columncourse_abb = base.Columns["course_abb"];
@@ -922,6 +948,10 @@ namespace WebApplication1.Dataset {
                 base.Columns.Add(this.columnstudent_id);
                 this.columnaf_gwa = new global::System.Data.DataColumn("af_gwa", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnaf_gwa);
+                this.columnprogid = new global::System.Data.DataColumn("progid", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprogid);
+                this.columnprog_abb = new global::System.Data.DataColumn("prog_abb", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprog_abb);
                 this.columncatid = new global::System.Data.DataColumn("catid", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncatid);
                 this.columncat_code = new global::System.Data.DataColumn("cat_code", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1245,6 +1275,38 @@ namespace WebApplication1.Dataset {
                 }
                 set {
                     this[this.tabletblApplicationForm.af_gwaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string progid {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblApplicationForm.progidColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'progid\' in table \'tblApplicationForm\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblApplicationForm.progidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string prog_abb {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblApplicationForm.prog_abbColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'prog_abb\' in table \'tblApplicationForm\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblApplicationForm.prog_abbColumn] = value;
                 }
             }
             
@@ -1817,6 +1879,30 @@ namespace WebApplication1.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setaf_ref_noNull() {
                 this[this.tabletblApplicationForm.af_ref_noColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsprogidNull() {
+                return this.IsNull(this.tabletblApplicationForm.progidColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetprogidNull() {
+                this[this.tabletblApplicationForm.progidColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isprog_abbNull() {
+                return this.IsNull(this.tabletblApplicationForm.prog_abbColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setprog_abbNull() {
+                this[this.tabletblApplicationForm.prog_abbColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
