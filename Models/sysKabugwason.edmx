@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="sysKabugwasonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="LoadReportApplicationForm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="afid" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="sysKabugwasonModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="sysKabugwasonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="sysKabugwasonEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="LoadReportApplicationForm" ReturnType="Collection(sysKabugwasonModel.LoadReportApplicationForm_Result)">
+            <Parameter Name="afid" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="LoadReportApplicationForm_Result">
+          <Property Type="Int32" Name="afid" Nullable="false" />
+          <Property Type="String" Name="af_ref_no" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="student_id" Nullable="false" />
+          <Property Type="Decimal" Name="af_gwa" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="catid" Nullable="false" />
+          <Property Type="String" Name="cat_code" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="course_abb" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="year_level" Nullable="false" />
+          <Property Type="Int32" Name="school_id" Nullable="false" />
+          <Property Type="String" Name="school_abb" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="school_name" Nullable="false" MaxLength="250" />
+          <Property Type="Int32" Name="progid" Nullable="false" />
+          <Property Type="String" Name="prog_abb" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="last_name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="first_name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="middle_name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="name_ext_code" Nullable="true" MaxLength="20" />
+          <Property Type="DateTime" Name="birthdate" Nullable="true" />
+          <Property Type="String" Name="place_of_birth" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="sex" Nullable="true" MaxLength="1" />
+          <Property Type="Int16" Name="religion_id" Nullable="true" />
+          <Property Type="String" Name="religion_name" Nullable="true" MaxLength="100" />
+          <Property Type="Int16" Name="civil_status_id" Nullable="true" />
+          <Property Type="String" Name="civil_status_name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="email_add" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="fb_acct_name" Nullable="true" MaxLength="350" />
+          <Property Type="String" Name="house_no" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="lot_no" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="purok" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="street" Nullable="true" MaxLength="250" />
+          <Property Type="Int32" Name="barangay_id" Nullable="true" />
+          <Property Type="String" Name="barangay_name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="cm_name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="elementary" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="elementary_year" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="highschool" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="highschool_year" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="father_last_name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="father_first_name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="father_middle_name" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="father_income" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="father_occupation" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="mother_last_name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="mother_first_name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="mother_middle_name" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="mother_income" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="mother_occupation" Nullable="true" MaxLength="250" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="sysKabugwasonModelStoreContainer" CdmEntityContainer="sysKabugwasonEntities" >
+          <FunctionImportMapping FunctionImportName="LoadReportApplicationForm" FunctionName="sysKabugwasonModel.Store.LoadReportApplicationForm">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sysKabugwasonModel.LoadReportApplicationForm_Result">
+                <ScalarProperty Name="afid" ColumnName="afid" />
+                <ScalarProperty Name="af_ref_no" ColumnName="af_ref_no" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="af_gwa" ColumnName="af_gwa" />
+                <ScalarProperty Name="catid" ColumnName="catid" />
+                <ScalarProperty Name="cat_code" ColumnName="cat_code" />
+                <ScalarProperty Name="course_abb" ColumnName="course_abb" />
+                <ScalarProperty Name="year_level" ColumnName="year_level" />
+                <ScalarProperty Name="school_id" ColumnName="school_id" />
+                <ScalarProperty Name="school_abb" ColumnName="school_abb" />
+                <ScalarProperty Name="school_name" ColumnName="school_name" />
+                <ScalarProperty Name="progid" ColumnName="progid" />
+                <ScalarProperty Name="prog_abb" ColumnName="prog_abb" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+                <ScalarProperty Name="name_ext_code" ColumnName="name_ext_code" />
+                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+                <ScalarProperty Name="place_of_birth" ColumnName="place_of_birth" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="religion_id" ColumnName="religion_id" />
+                <ScalarProperty Name="religion_name" ColumnName="religion_name" />
+                <ScalarProperty Name="civil_status_id" ColumnName="civil_status_id" />
+                <ScalarProperty Name="civil_status_name" ColumnName="civil_status_name" />
+                <ScalarProperty Name="email_add" ColumnName="email_add" />
+                <ScalarProperty Name="fb_acct_name" ColumnName="fb_acct_name" />
+                <ScalarProperty Name="house_no" ColumnName="house_no" />
+                <ScalarProperty Name="lot_no" ColumnName="lot_no" />
+                <ScalarProperty Name="purok" ColumnName="purok" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="barangay_id" ColumnName="barangay_id" />
+                <ScalarProperty Name="barangay_name" ColumnName="barangay_name" />
+                <ScalarProperty Name="cm_name" ColumnName="cm_name" />
+                <ScalarProperty Name="elementary" ColumnName="elementary" />
+                <ScalarProperty Name="elementary_year" ColumnName="elementary_year" />
+                <ScalarProperty Name="highschool" ColumnName="highschool" />
+                <ScalarProperty Name="highschool_year" ColumnName="highschool_year" />
+                <ScalarProperty Name="father_last_name" ColumnName="father_last_name" />
+                <ScalarProperty Name="father_first_name" ColumnName="father_first_name" />
+                <ScalarProperty Name="father_middle_name" ColumnName="father_middle_name" />
+                <ScalarProperty Name="father_income" ColumnName="father_income" />
+                <ScalarProperty Name="father_occupation" ColumnName="father_occupation" />
+                <ScalarProperty Name="mother_last_name" ColumnName="mother_last_name" />
+                <ScalarProperty Name="mother_first_name" ColumnName="mother_first_name" />
+                <ScalarProperty Name="mother_middle_name" ColumnName="mother_middle_name" />
+                <ScalarProperty Name="mother_income" ColumnName="mother_income" />
+                <ScalarProperty Name="mother_occupation" ColumnName="mother_occupation" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
