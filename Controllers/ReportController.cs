@@ -1,17 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
-using System.Web;
-using System.Web.MVC;
+using System.Web.Mvc;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
+using WebApplication1.Dataset;
 using WebApplication1.Models;
+using WebApplication1.Reports;
 
 namespace WebApplication1.Controllers
 {
     public class ReportController : Controller
     {
-        private sysBCSEntities db = new sysBCSEntities();
+        private sysKabugwasonEntities db = new sysKabugwasonEntities();
 
         public ActionResult Index()
         {
@@ -25,62 +29,26 @@ namespace WebApplication1.Controllers
         }
 
 
-        public ActionResult GenerateApplicationFormFront(int applicationId)
+        public ActionResult GenerateApplicationFormFront(int applicationId)//https://localhost:44357/Report/GenerateApplicationFormFront?applicationId=967
         {
             try
             {
-                var collections = db.LoadReportApplicationForm(applicationId).Select(a => new
+                CRApplicationFormFront rpt = new CRApplicationFormFront();
+                dsReports dsApplicationForm = new dsReports();
+
+                using (var sqlCmd = db.Database.Connection.CreateCommand())
                 {
-                    a.afid,
-                    a.af_ref_no,
-                    a.student_id,
-                    a.af_gwa,
-                    a.progid,
-                    a.prog_abb,
-                    a.catid,
-                    a.cat_code,
-                    a.course_abb,
-                    a.year_level,
-                    a.school_id,
-                    a.school_abb,
-                    a.school_name,
-                    a.last_name,
-                    a.first_name,
-                    a.middle_name,
-                    a.name_ext_code,
-                    a.birthdate,
-                    a.place_of_birth,
-                    a.sex,
-                    a.religion_id,
-                    a.religion_name,
-                    a.civil_status_id,
-                    a.civil_status_name,
-                    a.email_add,
-                    a.fb_acct_name,
-                    a.house_no,
-                    a.lot_no,
-                    a.purok,
-                    a.street,
-                    a.barangay_id,
-                    a.barangay_name,
-                    a.cm_name,
-                    a.father_last_name,
-                    a.father_first_name,
-                    a.father_middle_name,
-                    a.father_income,
-                    a.father_occupation,
-                    a.mother_last_name,
-                    a.mother_first_name,
-                    a.mother_middle_name,
-                    a.mother_income,
-                    a.mother_occupation
-                }).ToList();
-
-                ReportDocument rpt = new ReportDocument();
-                rpt.Load(Path.Combine(Server.MapPath("~/Reports"), "CRApplicationFormFront.rpt"));
-                rpt.SetDataSource(collections);
-                rpt.SetParameterValue("header", "Provincial Government of South Cotabato");
-
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.Add(new SqlParameter("@afid", applicationId));
+                    using (DbDataAdapter da = new SqlDataAdapter())
+                    {
+                        sqlCmd.CommandText = "LoadReportApplicationForm";
+                        da.SelectCommand = sqlCmd;
+                        da.Fill(dsApplicationForm, "tblApplicationForm");
+                        rpt.SetDataSource(dsApplicationForm);
+                    }
+                }
+              
                 Stream stream = rpt.ExportToStream(ExportFormatType.PortableDocFormat);
                 rpt.Close();
                 rpt.Dispose();
@@ -100,9 +68,8 @@ namespace WebApplication1.Controllers
         {
             try
             {
-                var collections = db.LoadReportApplicationForm(remitId).Select(a => new
+                var applicationForm = db.LoadReportApplicationForm(remitId).Select(a => new
                 {
-
                     a.afid,
                     a.af_ref_no,
                     a.student_id,
@@ -149,9 +116,8 @@ namespace WebApplication1.Controllers
 
                 }).ToList();
 
-                ReportDocument rpt = new ReportDocument();
-                rpt.Load(Path.Combine(Server.MapPath("~/Reports"), "CRApplicationFormBack.rpt"));
-                rpt.SetDataSource(collections);
+                CRApplicationFormBack rpt = new CRApplicationFormBack();
+                rpt.SetDataSource(applicationForm);
                 rpt.SetParameterValue("header", "Provincial Government of South Cotabato");
 
                 Stream stream = rpt.ExportToStream(ExportFormatType.PortableDocFormat);
