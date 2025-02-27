@@ -2,11 +2,13 @@
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
+using QRCoder;
 using WebApplication1.Dataset;
 using WebApplication1.Models;
 using WebApplication1.Reports;
@@ -44,6 +46,15 @@ namespace WebApplication1.Controllers
                         sqlCmd.CommandText = "LoadReportApplicationForm";
                         da.SelectCommand = sqlCmd;
                         da.Fill(dsApplicationForm, "tblApplicationForm");
+
+                       
+                        foreach (DataRow row in dsApplicationForm.Tables["tblApplicationForm"].Rows)
+                        {
+                            string qr_value = $"{row["af_ref_no"]} | {DateTime.Now}";
+                            byte[] qrCode = GenerateQRCode(qr_value);
+                            row["qr_code"] = qrCode;
+                        }
+
                         rpt.SetDataSource(dsApplicationForm);
                     }
                 }
@@ -77,6 +88,15 @@ namespace WebApplication1.Controllers
                         sqlCmd.CommandText = "LoadReportApplicationForm";
                         da.SelectCommand = sqlCmd;
                         da.Fill(dsApplicationForm, "tblApplicationForm");
+
+                       
+                        foreach (DataRow row in dsApplicationForm.Tables["tblApplicationForm"].Rows)
+                        {
+                            string qr_value = $"{row["af_ref_no"]} | {DateTime.Now}";
+                            byte[] qrCode = GenerateQRCode(qr_value);
+                            row["qr_code"] = qrCode;
+                        }
+
                         rpt.SetDataSource(dsApplicationForm);
                     }
                 }
@@ -182,5 +202,19 @@ namespace WebApplication1.Controllers
             }
             base.Dispose(disposing);
         }
+
+        private byte[] GenerateQRCode(string qrValue)
+        {
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrValue, QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            Bitmap qrCodeImage = qrCode.GetGraphic(20);
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                qrCodeImage.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
     }
-}
+}   

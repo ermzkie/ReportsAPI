@@ -365,6 +365,8 @@ namespace WebApplication1.Dataset {
             
             private global::System.Data.DataColumn columnmother_occupation;
             
+            private global::System.Data.DataColumn columnqr_code;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tblApplicationFormDataTable() {
@@ -744,6 +746,14 @@ namespace WebApplication1.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn qr_codeColumn {
+                get {
+                    return this.columnqr_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -817,7 +827,8 @@ namespace WebApplication1.Dataset {
                         string mother_first_name, 
                         string mother_middle_name, 
                         decimal mother_income, 
-                        string mother_occupation) {
+                        string mother_occupation, 
+                        byte[] qr_code) {
                 tblApplicationFormRow rowtblApplicationFormRow = ((tblApplicationFormRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -862,7 +873,8 @@ namespace WebApplication1.Dataset {
                         mother_first_name,
                         mother_middle_name,
                         mother_income,
-                        mother_occupation};
+                        mother_occupation,
+                        qr_code};
                 rowtblApplicationFormRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtblApplicationFormRow);
                 return rowtblApplicationFormRow;
@@ -935,6 +947,7 @@ namespace WebApplication1.Dataset {
                 this.columnmother_middle_name = base.Columns["mother_middle_name"];
                 this.columnmother_income = base.Columns["mother_income"];
                 this.columnmother_occupation = base.Columns["mother_occupation"];
+                this.columnqr_code = base.Columns["qr_code"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1026,6 +1039,8 @@ namespace WebApplication1.Dataset {
                 base.Columns.Add(this.columnmother_income);
                 this.columnmother_occupation = new global::System.Data.DataColumn("mother_occupation", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmother_occupation);
+                this.columnqr_code = new global::System.Data.DataColumn("qr_code", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnqr_code);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnafid}, true));
                 this.columnafid.AutoIncrement = true;
@@ -1871,6 +1886,22 @@ namespace WebApplication1.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public byte[] qr_code {
+                get {
+                    try {
+                        return ((byte[])(this[this.tabletblApplicationForm.qr_codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'qr_code\' in table \'tblApplicationForm\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblApplicationForm.qr_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isaf_ref_noNull() {
                 return this.IsNull(this.tabletblApplicationForm.af_ref_noColumn);
             }
@@ -2251,6 +2282,18 @@ namespace WebApplication1.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setmother_occupationNull() {
                 this[this.tabletblApplicationForm.mother_occupationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isqr_codeNull() {
+                return this.IsNull(this.tabletblApplicationForm.qr_codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setqr_codeNull() {
+                this[this.tabletblApplicationForm.qr_codeColumn] = global::System.Convert.DBNull;
             }
         }
         
