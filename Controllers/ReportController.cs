@@ -47,13 +47,6 @@ namespace WebApplication1.Controllers
                         da.SelectCommand = sqlCmd;
                         da.Fill(dsApplicationForm, "tblApplicationForm");
 
-                        sqlCmd.CommandText = "LoadReportSiblings";
-                        da.SelectCommand = sqlCmd;
-                        da.Fill(dsApplicationForm, "tblSiblings");
-
-
-
-                       
                         foreach (DataRow row in dsApplicationForm.Tables["tblApplicationForm"].Rows)
                         {
                             string qr_value = $"{row["af_ref_no"]} | {DateTime.Now}";
@@ -61,6 +54,11 @@ namespace WebApplication1.Controllers
                             row["qr_code"] = qrCode;
                         }
 
+                        sqlCmd.CommandText = "LoadReportSiblings";
+                        da.SelectCommand = sqlCmd;
+                        da.Fill(dsApplicationForm, "tblSiblings");
+
+                        rpt.Subreports[0].SetDataSource(dsApplicationForm);
                         rpt.SetDataSource(dsApplicationForm);
                     }
                 }
@@ -228,4 +226,4 @@ namespace WebApplication1.Controllers
             }
         }
     }
-}   
+}

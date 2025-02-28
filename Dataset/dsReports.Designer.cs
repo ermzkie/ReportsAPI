@@ -26,7 +26,7 @@ namespace WebApplication1.Dataset {
         
         private tblApplicationFormDataTable tabletblApplicationForm;
         
-        private LoadReportSiblingsDataTable tableLoadReportSiblings;
+        private tblSiblingsDataTable tabletblSiblings;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -59,8 +59,8 @@ namespace WebApplication1.Dataset {
                 if ((ds.Tables["tblApplicationForm"] != null)) {
                     base.Tables.Add(new tblApplicationFormDataTable(ds.Tables["tblApplicationForm"]));
                 }
-                if ((ds.Tables["LoadReportSiblings"] != null)) {
-                    base.Tables.Add(new LoadReportSiblingsDataTable(ds.Tables["LoadReportSiblings"]));
+                if ((ds.Tables["tblSiblings"] != null)) {
+                    base.Tables.Add(new tblSiblingsDataTable(ds.Tables["tblSiblings"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -94,9 +94,9 @@ namespace WebApplication1.Dataset {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public LoadReportSiblingsDataTable LoadReportSiblings {
+        public tblSiblingsDataTable tblSiblings {
             get {
-                return this.tableLoadReportSiblings;
+                return this.tabletblSiblings;
             }
         }
         
@@ -170,8 +170,8 @@ namespace WebApplication1.Dataset {
                 if ((ds.Tables["tblApplicationForm"] != null)) {
                     base.Tables.Add(new tblApplicationFormDataTable(ds.Tables["tblApplicationForm"]));
                 }
-                if ((ds.Tables["LoadReportSiblings"] != null)) {
-                    base.Tables.Add(new LoadReportSiblingsDataTable(ds.Tables["LoadReportSiblings"]));
+                if ((ds.Tables["tblSiblings"] != null)) {
+                    base.Tables.Add(new tblSiblingsDataTable(ds.Tables["tblSiblings"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -212,10 +212,10 @@ namespace WebApplication1.Dataset {
                     this.tabletblApplicationForm.InitVars();
                 }
             }
-            this.tableLoadReportSiblings = ((LoadReportSiblingsDataTable)(base.Tables["LoadReportSiblings"]));
+            this.tabletblSiblings = ((tblSiblingsDataTable)(base.Tables["tblSiblings"]));
             if ((initTable == true)) {
-                if ((this.tableLoadReportSiblings != null)) {
-                    this.tableLoadReportSiblings.InitVars();
+                if ((this.tabletblSiblings != null)) {
+                    this.tabletblSiblings.InitVars();
                 }
             }
         }
@@ -230,8 +230,8 @@ namespace WebApplication1.Dataset {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tabletblApplicationForm = new tblApplicationFormDataTable();
             base.Tables.Add(this.tabletblApplicationForm);
-            this.tableLoadReportSiblings = new LoadReportSiblingsDataTable();
-            base.Tables.Add(this.tableLoadReportSiblings);
+            this.tabletblSiblings = new tblSiblingsDataTable();
+            base.Tables.Add(this.tabletblSiblings);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -242,7 +242,7 @@ namespace WebApplication1.Dataset {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeLoadReportSiblings() {
+        private bool ShouldSerializetblSiblings() {
             return false;
         }
         
@@ -305,7 +305,7 @@ namespace WebApplication1.Dataset {
         public delegate void tblApplicationFormRowChangeEventHandler(object sender, tblApplicationFormRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void LoadReportSiblingsRowChangeEventHandler(object sender, LoadReportSiblingsRowChangeEvent e);
+        public delegate void tblSiblingsRowChangeEventHandler(object sender, tblSiblingsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1270,7 +1270,7 @@ namespace WebApplication1.Dataset {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class LoadReportSiblingsDataTable : global::System.Data.TypedTableBase<LoadReportSiblingsRow> {
+        public partial class tblSiblingsDataTable : global::System.Data.TypedTableBase<tblSiblingsRow> {
             
             private global::System.Data.DataColumn columnsibid;
             
@@ -1294,8 +1294,8 @@ namespace WebApplication1.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public LoadReportSiblingsDataTable() {
-                this.TableName = "LoadReportSiblings";
+            public tblSiblingsDataTable() {
+                this.TableName = "tblSiblings";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1303,7 +1303,7 @@ namespace WebApplication1.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal LoadReportSiblingsDataTable(global::System.Data.DataTable table) {
+            internal tblSiblingsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1320,7 +1320,7 @@ namespace WebApplication1.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected LoadReportSiblingsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected tblSiblingsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1416,34 +1416,34 @@ namespace WebApplication1.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public LoadReportSiblingsRow this[int index] {
+            public tblSiblingsRow this[int index] {
                 get {
-                    return ((LoadReportSiblingsRow)(this.Rows[index]));
+                    return ((tblSiblingsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event LoadReportSiblingsRowChangeEventHandler LoadReportSiblingsRowChanging;
+            public event tblSiblingsRowChangeEventHandler tblSiblingsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event LoadReportSiblingsRowChangeEventHandler LoadReportSiblingsRowChanged;
+            public event tblSiblingsRowChangeEventHandler tblSiblingsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event LoadReportSiblingsRowChangeEventHandler LoadReportSiblingsRowDeleting;
+            public event tblSiblingsRowChangeEventHandler tblSiblingsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event LoadReportSiblingsRowChangeEventHandler LoadReportSiblingsRowDeleted;
+            public event tblSiblingsRowChangeEventHandler tblSiblingsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddLoadReportSiblingsRow(LoadReportSiblingsRow row) {
+            public void AddtblSiblingsRow(tblSiblingsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public LoadReportSiblingsRow AddLoadReportSiblingsRow(string sib_name, System.DateTime sib_birthday, string sib_place_work, string sib_school, int civil_status_id, string sibling_civil_status_name, int sib_age, int sibling_age) {
-                LoadReportSiblingsRow rowLoadReportSiblingsRow = ((LoadReportSiblingsRow)(this.NewRow()));
+            public tblSiblingsRow AddtblSiblingsRow(string sib_name, System.DateTime sib_birthday, string sib_place_work, string sib_school, int civil_status_id, string sibling_civil_status_name, int sib_age, int sibling_age) {
+                tblSiblingsRow rowtblSiblingsRow = ((tblSiblingsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
@@ -1455,15 +1455,15 @@ namespace WebApplication1.Dataset {
                         sibling_civil_status_name,
                         sib_age,
                         sibling_age};
-                rowLoadReportSiblingsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowLoadReportSiblingsRow);
-                return rowLoadReportSiblingsRow;
+                rowtblSiblingsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtblSiblingsRow);
+                return rowtblSiblingsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                LoadReportSiblingsDataTable cln = ((LoadReportSiblingsDataTable)(base.Clone()));
+                tblSiblingsDataTable cln = ((tblSiblingsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1471,7 +1471,7 @@ namespace WebApplication1.Dataset {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new LoadReportSiblingsDataTable();
+                return new tblSiblingsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1533,28 +1533,28 @@ namespace WebApplication1.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public LoadReportSiblingsRow NewLoadReportSiblingsRow() {
-                return ((LoadReportSiblingsRow)(this.NewRow()));
+            public tblSiblingsRow NewtblSiblingsRow() {
+                return ((tblSiblingsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new LoadReportSiblingsRow(builder);
+                return new tblSiblingsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(LoadReportSiblingsRow);
+                return typeof(tblSiblingsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.LoadReportSiblingsRowChanged != null)) {
-                    this.LoadReportSiblingsRowChanged(this, new LoadReportSiblingsRowChangeEvent(((LoadReportSiblingsRow)(e.Row)), e.Action));
+                if ((this.tblSiblingsRowChanged != null)) {
+                    this.tblSiblingsRowChanged(this, new tblSiblingsRowChangeEvent(((tblSiblingsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1562,8 +1562,8 @@ namespace WebApplication1.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.LoadReportSiblingsRowChanging != null)) {
-                    this.LoadReportSiblingsRowChanging(this, new LoadReportSiblingsRowChangeEvent(((LoadReportSiblingsRow)(e.Row)), e.Action));
+                if ((this.tblSiblingsRowChanging != null)) {
+                    this.tblSiblingsRowChanging(this, new tblSiblingsRowChangeEvent(((tblSiblingsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1571,8 +1571,8 @@ namespace WebApplication1.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.LoadReportSiblingsRowDeleted != null)) {
-                    this.LoadReportSiblingsRowDeleted(this, new LoadReportSiblingsRowChangeEvent(((LoadReportSiblingsRow)(e.Row)), e.Action));
+                if ((this.tblSiblingsRowDeleted != null)) {
+                    this.tblSiblingsRowDeleted(this, new tblSiblingsRowChangeEvent(((tblSiblingsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1580,14 +1580,14 @@ namespace WebApplication1.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.LoadReportSiblingsRowDeleting != null)) {
-                    this.LoadReportSiblingsRowDeleting(this, new LoadReportSiblingsRowChangeEvent(((LoadReportSiblingsRow)(e.Row)), e.Action));
+                if ((this.tblSiblingsRowDeleting != null)) {
+                    this.tblSiblingsRowDeleting(this, new tblSiblingsRowChangeEvent(((tblSiblingsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveLoadReportSiblingsRow(LoadReportSiblingsRow row) {
+            public void RemovetblSiblingsRow(tblSiblingsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1614,7 +1614,7 @@ namespace WebApplication1.Dataset {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "LoadReportSiblingsDataTable";
+                attribute2.FixedValue = "tblSiblingsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2725,25 +2725,25 @@ namespace WebApplication1.Dataset {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class LoadReportSiblingsRow : global::System.Data.DataRow {
+        public partial class tblSiblingsRow : global::System.Data.DataRow {
             
-            private LoadReportSiblingsDataTable tableLoadReportSiblings;
+            private tblSiblingsDataTable tabletblSiblings;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal LoadReportSiblingsRow(global::System.Data.DataRowBuilder rb) : 
+            internal tblSiblingsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableLoadReportSiblings = ((LoadReportSiblingsDataTable)(this.Table));
+                this.tabletblSiblings = ((tblSiblingsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int sibid {
                 get {
-                    return ((int)(this[this.tableLoadReportSiblings.sibidColumn]));
+                    return ((int)(this[this.tabletblSiblings.sibidColumn]));
                 }
                 set {
-                    this[this.tableLoadReportSiblings.sibidColumn] = value;
+                    this[this.tabletblSiblings.sibidColumn] = value;
                 }
             }
             
@@ -2751,10 +2751,10 @@ namespace WebApplication1.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int student_id {
                 get {
-                    return ((int)(this[this.tableLoadReportSiblings.student_idColumn]));
+                    return ((int)(this[this.tabletblSiblings.student_idColumn]));
                 }
                 set {
-                    this[this.tableLoadReportSiblings.student_idColumn] = value;
+                    this[this.tabletblSiblings.student_idColumn] = value;
                 }
             }
             
@@ -2763,14 +2763,14 @@ namespace WebApplication1.Dataset {
             public string sib_name {
                 get {
                     try {
-                        return ((string)(this[this.tableLoadReportSiblings.sib_nameColumn]));
+                        return ((string)(this[this.tabletblSiblings.sib_nameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'sib_name\' in table \'LoadReportSiblings\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'sib_name\' in table \'tblSiblings\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLoadReportSiblings.sib_nameColumn] = value;
+                    this[this.tabletblSiblings.sib_nameColumn] = value;
                 }
             }
             
@@ -2779,14 +2779,14 @@ namespace WebApplication1.Dataset {
             public System.DateTime sib_birthday {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableLoadReportSiblings.sib_birthdayColumn]));
+                        return ((global::System.DateTime)(this[this.tabletblSiblings.sib_birthdayColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'sib_birthday\' in table \'LoadReportSiblings\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'sib_birthday\' in table \'tblSiblings\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLoadReportSiblings.sib_birthdayColumn] = value;
+                    this[this.tabletblSiblings.sib_birthdayColumn] = value;
                 }
             }
             
@@ -2795,14 +2795,14 @@ namespace WebApplication1.Dataset {
             public string sib_place_work {
                 get {
                     try {
-                        return ((string)(this[this.tableLoadReportSiblings.sib_place_workColumn]));
+                        return ((string)(this[this.tabletblSiblings.sib_place_workColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'sib_place_work\' in table \'LoadReportSiblings\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'sib_place_work\' in table \'tblSiblings\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLoadReportSiblings.sib_place_workColumn] = value;
+                    this[this.tabletblSiblings.sib_place_workColumn] = value;
                 }
             }
             
@@ -2811,14 +2811,14 @@ namespace WebApplication1.Dataset {
             public string sib_school {
                 get {
                     try {
-                        return ((string)(this[this.tableLoadReportSiblings.sib_schoolColumn]));
+                        return ((string)(this[this.tabletblSiblings.sib_schoolColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'sib_school\' in table \'LoadReportSiblings\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'sib_school\' in table \'tblSiblings\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLoadReportSiblings.sib_schoolColumn] = value;
+                    this[this.tabletblSiblings.sib_schoolColumn] = value;
                 }
             }
             
@@ -2827,14 +2827,14 @@ namespace WebApplication1.Dataset {
             public int civil_status_id {
                 get {
                     try {
-                        return ((int)(this[this.tableLoadReportSiblings.civil_status_idColumn]));
+                        return ((int)(this[this.tabletblSiblings.civil_status_idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'civil_status_id\' in table \'LoadReportSiblings\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'civil_status_id\' in table \'tblSiblings\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLoadReportSiblings.civil_status_idColumn] = value;
+                    this[this.tabletblSiblings.civil_status_idColumn] = value;
                 }
             }
             
@@ -2842,10 +2842,10 @@ namespace WebApplication1.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string sibling_civil_status_name {
                 get {
-                    return ((string)(this[this.tableLoadReportSiblings.sibling_civil_status_nameColumn]));
+                    return ((string)(this[this.tabletblSiblings.sibling_civil_status_nameColumn]));
                 }
                 set {
-                    this[this.tableLoadReportSiblings.sibling_civil_status_nameColumn] = value;
+                    this[this.tabletblSiblings.sibling_civil_status_nameColumn] = value;
                 }
             }
             
@@ -2854,14 +2854,14 @@ namespace WebApplication1.Dataset {
             public int sib_age {
                 get {
                     try {
-                        return ((int)(this[this.tableLoadReportSiblings.sib_ageColumn]));
+                        return ((int)(this[this.tabletblSiblings.sib_ageColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'sib_age\' in table \'LoadReportSiblings\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'sib_age\' in table \'tblSiblings\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLoadReportSiblings.sib_ageColumn] = value;
+                    this[this.tabletblSiblings.sib_ageColumn] = value;
                 }
             }
             
@@ -2870,99 +2870,99 @@ namespace WebApplication1.Dataset {
             public int sibling_age {
                 get {
                     try {
-                        return ((int)(this[this.tableLoadReportSiblings.sibling_ageColumn]));
+                        return ((int)(this[this.tabletblSiblings.sibling_ageColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'sibling_age\' in table \'LoadReportSiblings\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'sibling_age\' in table \'tblSiblings\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLoadReportSiblings.sibling_ageColumn] = value;
+                    this[this.tabletblSiblings.sibling_ageColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Issib_nameNull() {
-                return this.IsNull(this.tableLoadReportSiblings.sib_nameColumn);
+                return this.IsNull(this.tabletblSiblings.sib_nameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setsib_nameNull() {
-                this[this.tableLoadReportSiblings.sib_nameColumn] = global::System.Convert.DBNull;
+                this[this.tabletblSiblings.sib_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Issib_birthdayNull() {
-                return this.IsNull(this.tableLoadReportSiblings.sib_birthdayColumn);
+                return this.IsNull(this.tabletblSiblings.sib_birthdayColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setsib_birthdayNull() {
-                this[this.tableLoadReportSiblings.sib_birthdayColumn] = global::System.Convert.DBNull;
+                this[this.tabletblSiblings.sib_birthdayColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Issib_place_workNull() {
-                return this.IsNull(this.tableLoadReportSiblings.sib_place_workColumn);
+                return this.IsNull(this.tabletblSiblings.sib_place_workColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setsib_place_workNull() {
-                this[this.tableLoadReportSiblings.sib_place_workColumn] = global::System.Convert.DBNull;
+                this[this.tabletblSiblings.sib_place_workColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Issib_schoolNull() {
-                return this.IsNull(this.tableLoadReportSiblings.sib_schoolColumn);
+                return this.IsNull(this.tabletblSiblings.sib_schoolColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setsib_schoolNull() {
-                this[this.tableLoadReportSiblings.sib_schoolColumn] = global::System.Convert.DBNull;
+                this[this.tabletblSiblings.sib_schoolColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Iscivil_status_idNull() {
-                return this.IsNull(this.tableLoadReportSiblings.civil_status_idColumn);
+                return this.IsNull(this.tabletblSiblings.civil_status_idColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setcivil_status_idNull() {
-                this[this.tableLoadReportSiblings.civil_status_idColumn] = global::System.Convert.DBNull;
+                this[this.tabletblSiblings.civil_status_idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Issib_ageNull() {
-                return this.IsNull(this.tableLoadReportSiblings.sib_ageColumn);
+                return this.IsNull(this.tabletblSiblings.sib_ageColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setsib_ageNull() {
-                this[this.tableLoadReportSiblings.sib_ageColumn] = global::System.Convert.DBNull;
+                this[this.tabletblSiblings.sib_ageColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Issibling_ageNull() {
-                return this.IsNull(this.tableLoadReportSiblings.sibling_ageColumn);
+                return this.IsNull(this.tabletblSiblings.sibling_ageColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setsibling_ageNull() {
-                this[this.tableLoadReportSiblings.sibling_ageColumn] = global::System.Convert.DBNull;
+                this[this.tabletblSiblings.sibling_ageColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3004,22 +3004,22 @@ namespace WebApplication1.Dataset {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class LoadReportSiblingsRowChangeEvent : global::System.EventArgs {
+        public class tblSiblingsRowChangeEvent : global::System.EventArgs {
             
-            private LoadReportSiblingsRow eventRow;
+            private tblSiblingsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public LoadReportSiblingsRowChangeEvent(LoadReportSiblingsRow row, global::System.Data.DataRowAction action) {
+            public tblSiblingsRowChangeEvent(tblSiblingsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public LoadReportSiblingsRow Row {
+            public tblSiblingsRow Row {
                 get {
                     return this.eventRow;
                 }
