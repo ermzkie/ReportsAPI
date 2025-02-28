@@ -47,6 +47,12 @@ namespace WebApplication1.Controllers
                         da.SelectCommand = sqlCmd;
                         da.Fill(dsApplicationForm, "tblApplicationForm");
 
+                        sqlCmd.CommandText = "LoadReportSiblings";
+                        da.SelectCommand = sqlCmd;
+                        da.Fill(dsApplicationForm, "tblSiblings");
+
+
+
                        
                         foreach (DataRow row in dsApplicationForm.Tables["tblApplicationForm"].Rows)
                         {
@@ -89,7 +95,12 @@ namespace WebApplication1.Controllers
                         da.SelectCommand = sqlCmd;
                         da.Fill(dsApplicationForm, "tblApplicationForm");
 
-                       
+                        sqlCmd.CommandText = "LoadReportSiblings";
+                        da.SelectCommand = sqlCmd;
+                        da.Fill(dsApplicationForm, "tblSiblings");
+
+
+
                         foreach (DataRow row in dsApplicationForm.Tables["tblApplicationForm"].Rows)
                         {
                             string qr_value = $"{row["af_ref_no"]} | {DateTime.Now}";
