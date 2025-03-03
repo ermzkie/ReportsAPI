@@ -76,7 +76,7 @@ namespace WebApplication1.Controllers
             }
         }
 
-        public ActionResult GenerateApplicationFormBack(int applicationId)//https://localhost:44357/Report/GenerateApplicationFormBack?applicationId=967
+        public ActionResult GenerateApplicationFormBack(int applicationId)//https://localhost:44357/Report/GenerateApplicationFormBack?applicationId=1100
         {
             try
             {
