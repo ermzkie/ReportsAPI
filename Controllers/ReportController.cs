@@ -30,7 +30,7 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public ActionResult GenerateApplicationFormFront(int applicationId)//https://localhost:44357/Report/GenerateApplicationFormFront?applicationId=967
+        public ActionResult GenerateApplicationFormFront(int applicationId)//https://localhost:44357/Report/GenerateApplicationFormFront?applicationId=1100
         {
             try
             {
