@@ -27,8 +27,8 @@
               </xs:element>
               <xs:element name="student_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="student_idColumn" msprop:Generator_ColumnPropNameInRow="student_id" msprop:Generator_UserColumnName="student_id" msprop:Generator_ColumnVarNameInTable="columnstudent_id" type="xs:int" />
               <xs:element name="af_gwa" msprop:Generator_ColumnPropNameInTable="af_gwaColumn" msprop:Generator_ColumnPropNameInRow="af_gwa" msprop:Generator_UserColumnName="af_gwa" msprop:Generator_ColumnVarNameInTable="columnaf_gwa" type="xs:decimal" />
-              <xs:element name="progid" msprop:Generator_ColumnPropNameInRow="progid" msprop:Generator_ColumnPropNameInTable="progidColumn" msprop:Generator_ColumnVarNameInTable="columnprogid" msprop:Generator_UserColumnName="progid" type="xs:string" minOccurs="0" />
-              <xs:element name="prog_abb" msprop:Generator_ColumnPropNameInRow="prog_abb" msprop:Generator_ColumnPropNameInTable="prog_abbColumn" msprop:Generator_ColumnVarNameInTable="columnprog_abb" msprop:Generator_UserColumnName="prog_abb" type="xs:string" minOccurs="0" />
+              <xs:element name="progid" msprop:Generator_ColumnPropNameInTable="progidColumn" msprop:Generator_ColumnPropNameInRow="progid" msprop:Generator_UserColumnName="progid" msprop:Generator_ColumnVarNameInTable="columnprogid" type="xs:string" minOccurs="0" />
+              <xs:element name="prog_abb" msprop:Generator_ColumnPropNameInTable="prog_abbColumn" msprop:Generator_ColumnPropNameInRow="prog_abb" msprop:Generator_UserColumnName="prog_abb" msprop:Generator_ColumnVarNameInTable="columnprog_abb" type="xs:string" minOccurs="0" />
               <xs:element name="catid" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="catidColumn" msprop:Generator_ColumnPropNameInRow="catid" msprop:Generator_UserColumnName="catid" msprop:Generator_ColumnVarNameInTable="columncatid" type="xs:int" />
               <xs:element name="cat_code" msprop:Generator_ColumnPropNameInTable="cat_codeColumn" msprop:Generator_ColumnPropNameInRow="cat_code" msprop:Generator_UserColumnName="cat_code" msprop:Generator_ColumnVarNameInTable="columncat_code" minOccurs="0">
                 <xs:simpleType>
@@ -234,6 +234,47 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="qr_code" msprop:Generator_ColumnPropNameInTable="qr_codeColumn" msprop:Generator_ColumnPropNameInRow="qr_code" msprop:Generator_UserColumnName="qr_code" msprop:Generator_ColumnVarNameInTable="columnqr_code" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblSiblings" msprop:Generator_RowClassName="tblSiblingsRow" msprop:Generator_RowEvHandlerName="tblSiblingsRowChangeEventHandler" msprop:Generator_RowDeletedName="tblSiblingsRowDeleted" msprop:Generator_RowDeletingName="tblSiblingsRowDeleting" msprop:Generator_RowEvArgName="tblSiblingsRowChangeEvent" msprop:Generator_TablePropName="tblSiblings" msprop:Generator_RowChangedName="tblSiblingsRowChanged" msprop:Generator_UserTableName="tblSiblings" msprop:Generator_RowChangingName="tblSiblingsRowChanging" msprop:Generator_TableClassName="tblSiblingsDataTable" msprop:Generator_TableVarName="tabletblSiblings">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sibid" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="sibid" msprop:Generator_ColumnPropNameInTable="sibidColumn" msprop:Generator_ColumnPropNameInRow="sibid" msprop:Generator_ColumnVarNameInTable="columnsibid" type="xs:int" />
+              <xs:element name="student_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="student_id" msprop:Generator_ColumnPropNameInTable="student_idColumn" msprop:Generator_ColumnPropNameInRow="student_id" msprop:Generator_ColumnVarNameInTable="columnstudent_id" type="xs:int" />
+              <xs:element name="sib_name" msdata:ReadOnly="true" msprop:Generator_UserColumnName="sib_name" msprop:Generator_ColumnPropNameInTable="sib_nameColumn" msprop:Generator_ColumnPropNameInRow="sib_name" msprop:Generator_ColumnVarNameInTable="columnsib_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="127" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sib_birthday" msprop:Generator_UserColumnName="sib_birthday" msprop:Generator_ColumnPropNameInTable="sib_birthdayColumn" msprop:Generator_ColumnPropNameInRow="sib_birthday" msprop:Generator_ColumnVarNameInTable="columnsib_birthday" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="sib_place_work" msprop:Generator_UserColumnName="sib_place_work" msprop:Generator_ColumnPropNameInTable="sib_place_workColumn" msprop:Generator_ColumnPropNameInRow="sib_place_work" msprop:Generator_ColumnVarNameInTable="columnsib_place_work" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sib_school" msprop:Generator_UserColumnName="sib_school" msprop:Generator_ColumnPropNameInTable="sib_schoolColumn" msprop:Generator_ColumnPropNameInRow="sib_school" msprop:Generator_ColumnVarNameInTable="columnsib_school" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="civil_status_id" msprop:Generator_UserColumnName="civil_status_id" msprop:Generator_ColumnPropNameInTable="civil_status_idColumn" msprop:Generator_ColumnPropNameInRow="civil_status_id" msprop:Generator_ColumnVarNameInTable="columncivil_status_id" type="xs:int" minOccurs="0" />
+              <xs:element name="sibling_civil_status_name" msprop:Generator_UserColumnName="sibling_civil_status_name" msprop:Generator_ColumnPropNameInTable="sibling_civil_status_nameColumn" msprop:Generator_ColumnPropNameInRow="sibling_civil_status_name" msprop:Generator_ColumnVarNameInTable="columnsibling_civil_status_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sib_age" msprop:Generator_UserColumnName="sib_age" msprop:Generator_ColumnPropNameInTable="sib_ageColumn" msprop:Generator_ColumnPropNameInRow="sib_age" msprop:Generator_ColumnVarNameInTable="columnsib_age" type="xs:int" minOccurs="0" />
+              <xs:element name="sibling_age" msdata:ReadOnly="true" msprop:Generator_UserColumnName="sibling_age" msprop:Generator_ColumnPropNameInTable="sibling_ageColumn" msprop:Generator_ColumnPropNameInRow="sibling_age" msprop:Generator_ColumnVarNameInTable="columnsibling_age" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
