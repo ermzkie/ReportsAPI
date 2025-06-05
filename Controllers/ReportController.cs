@@ -225,5 +225,61 @@ namespace WebApplication1.Controllers
                 return ms.ToArray();
             }
         }
+
+        public ActionResult ListOfIPStudents() // https://localhost:44357/Report/ListOfIPStudents
+        {
+            ReportClass rpt  = new CRListofIPStudents();
+            rpt.SetParameterValue("@batch_id", null);
+
+            ApplyConnectionInfo(rpt);
+            Stream stream = rpt.ExportToStream(ExportFormatType.PortableDocFormat);
+            rpt.Close();
+            rpt.Dispose();
+            GC.Collect();
+
+            stream.Position = 0; // Reset stream
+            return File(stream, "application/pdf");
+        }
+
+        public static void ApplyConnectionInfo(ReportDocument report)
+        {
+            // Connection info for OLE DB (ADO)
+            ConnectionInfo connectionInfo = new ConnectionInfo
+            {
+                ServerName = "188.180.66.231",
+                DatabaseName = "sysKabugwason",
+                UserID = "ojt",
+                Password = "ojt123",
+                IntegratedSecurity = false // Set to true if using Windows Authentication
+            };
+
+            // Apply to main report tables
+            foreach (Table table in report.Database.Tables)
+            {
+                TableLogOnInfo logOnInfo = table.LogOnInfo;
+                logOnInfo.ConnectionInfo = connectionInfo;
+                table.ApplyLogOnInfo(logOnInfo);
+            }
+
+            // Apply to subreports if applicable (optional)
+            foreach (Section section in report.ReportDefinition.Sections)
+            {
+                foreach (ReportObject reportObject in section.ReportObjects)
+                {
+                    if (reportObject.Kind == ReportObjectKind.SubreportObject)
+                    {
+                        SubreportObject subreportObject = (SubreportObject)reportObject;
+                        ReportDocument subReport = subreportObject.OpenSubreport(subreportObject.SubreportName);
+
+                        foreach (Table table in subReport.Database.Tables)
+                        {
+                            TableLogOnInfo logOnInfo = table.LogOnInfo;
+                            logOnInfo.ConnectionInfo = connectionInfo;
+                            table.ApplyLogOnInfo(logOnInfo);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
