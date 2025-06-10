@@ -241,6 +241,21 @@ namespace WebApplication1.Controllers
             return File(stream, "application/pdf");
         }
 
+        public ActionResult ScholarsByProgramCategory() // https://localhost:44357/Report/ScholarsByProgramCategory
+        {
+            ReportClass rpt = new CRLoadReportsScholarsByProgramCategory();
+            rpt.SetParameterValue("@batch_id", null);
+
+            ApplyConnectionInfo(rpt);
+            Stream stream = rpt.ExportToStream(ExportFormatType.PortableDocFormat);
+            rpt.Close();
+            rpt.Dispose();
+            GC.Collect();
+
+            stream.Position = 0; // Reset stream
+            return File(stream, "application/pdf");
+        }
+
         public static void ApplyConnectionInfo(ReportDocument report)
         {
             // Connection info for OLE DB (ADO)
@@ -283,3 +298,4 @@ namespace WebApplication1.Controllers
         }
     }
 }
+
