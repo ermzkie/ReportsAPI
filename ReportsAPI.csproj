@@ -189,7 +189,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CRApplicantsByMunAndBrgy.rpt</DependentUpon>
-       <SubType>Component</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\CRListofIPStudents.cs">
       <AutoGen>True</AutoGen>
@@ -203,16 +203,10 @@
       <DependentUpon>CRLoadReportsScholarsByProgramCategory.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\CrystalReport1.cs">
+    <Compile Include="Reports\CRStatisticsOfScholarsBySex.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reports\CRStatisticsOfScholarsBySex1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CRStatisticsOfScholarsBySex1.rpt</DependentUpon>
+      <DependentUpon>CRStatisticsOfScholarsBySex.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
@@ -352,13 +346,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRLoadReportsScholarsByProgramCategory.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\CrystalReport1.rpt">
+    <EmbeddedResource Include="Reports\CRStatisticsOfScholarsBySex.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\CRStatisticsOfScholarsBySex1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CRStatisticsOfScholarsBySex1.cs</LastGenOutput>
+      <LastGenOutput>CRStatisticsOfScholarsBySex.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

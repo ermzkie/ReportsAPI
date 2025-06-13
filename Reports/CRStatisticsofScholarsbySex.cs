@@ -16,14 +16,14 @@ namespace WebApplication1.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CRStatisticsofScholarsbySex : ReportClass {
+    public class CRStatisticsOfScholarsBySex : ReportClass {
         
-        public CRStatisticsofScholarsbySex() {
+        public CRStatisticsOfScholarsBySex() {
         }
         
         public override string ResourceName {
             get {
-                return "CRStatisticsofScholarsbySex.rpt";
+                return "CRStatisticsOfScholarsBySex.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace WebApplication1.Reports {
         
         public override string FullResourceName {
             get {
-                return "WebApplication1.Reports.CRStatisticsofScholarsbySex.rpt";
+                return "WebApplication1.Reports.CRStatisticsOfScholarsBySex.rpt";
             }
             set {
                 // Do nothing
@@ -114,9 +114,9 @@ namespace WebApplication1.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCRStatisticsofScholarsbySex : Component, ICachedReport {
+    public class CachedCRStatisticsOfScholarsBySex : Component, ICachedReport {
         
-        public CachedCRStatisticsofScholarsbySex() {
+        public CachedCRStatisticsOfScholarsBySex() {
         }
         
         [Browsable(false)]
@@ -153,7 +153,7 @@ namespace WebApplication1.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CRStatisticsofScholarsbySex rpt = new CRStatisticsofScholarsbySex();
+            CRStatisticsOfScholarsBySex rpt = new CRStatisticsOfScholarsBySex();
             rpt.Site = this.Site;
             return rpt;
         }
