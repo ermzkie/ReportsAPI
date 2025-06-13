@@ -185,6 +185,12 @@
       <DependentUpon>CRApplicationFormBack.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\CRApplicantsByMunAndBrgy.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRApplicantsByMunAndBrgy.rpt</DependentUpon>
+       <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\CRListofIPStudents.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -200,9 +206,7 @@
     <Compile Include="Reports\CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>   
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -327,6 +331,10 @@
     <EmbeddedResource Include="Reports\CRApplicationFormBack.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRApplicationFormBack.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CRApplicantsByMunAndBrgy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRApplicantsByMunAndBrgy.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CRListofIPStudents.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
