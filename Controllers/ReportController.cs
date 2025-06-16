@@ -258,7 +258,7 @@ namespace WebApplication1.Controllers
 
         public ActionResult StatisticsOfScholarsBySex() // https://localhost:44357/Report/StatisticsOfScholarsBySex
         {
-            ReportClass rpt = new CRStatisticsOfScholarsBySex1();
+            ReportClass rpt = new CRStatisticsOfScholarsBySex();
              rpt.SetParameterValue("@batch_id", null);
 
             ApplyConnectionInfo(rpt);
