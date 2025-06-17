@@ -16,14 +16,14 @@ namespace WebApplication1.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CRListofIPStudents : ReportClass {
+    public class CRApplicantsPerBatchProgramCategory : ReportClass {
         
-        public CRListofIPStudents() {
+        public CRApplicantsPerBatchProgramCategory() {
         }
         
         public override string ResourceName {
             get {
-                return "CRListofIPStudents.rpt";
+                return "CRApplicantsPerBatchProgramCategory.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace WebApplication1.Reports {
         
         public override string FullResourceName {
             get {
-                return "WebApplication1.Reports.CRListofIPStudents.rpt";
+                return "WebApplication1.Reports.CRApplicantsPerBatchProgramCategory.rpt";
             }
             set {
                 // Do nothing
@@ -58,7 +58,7 @@ namespace WebApplication1.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section2 {
             get {
                 return this.ReportDefinition.Sections[1];
             }
@@ -66,7 +66,7 @@ namespace WebApplication1.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section2 {
+        public CrystalDecisions.CrystalReports.Engine.Section PageHeaderSection1 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace WebApplication1.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section PageHeaderSection2 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace WebApplication1.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,9 +90,17 @@ namespace WebApplication1.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[5];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[6];
             }
         }
         
@@ -106,9 +114,9 @@ namespace WebApplication1.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCRListofIPStudents : Component, ICachedReport {
+    public class CachedCRApplicantsPerBatchProgramCategory : Component, ICachedReport {
         
-        public CachedCRListofIPStudents() {
+        public CachedCRApplicantsPerBatchProgramCategory() {
         }
         
         [Browsable(false)]
@@ -145,7 +153,7 @@ namespace WebApplication1.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CRListofIPStudents rpt = new CRListofIPStudents();
+            CRApplicantsPerBatchProgramCategory rpt = new CRApplicantsPerBatchProgramCategory();
             rpt.Site = this.Site;
             return rpt;
         }
