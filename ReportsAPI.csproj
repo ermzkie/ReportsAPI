@@ -191,6 +191,11 @@
       <DependentUpon>CRApplicantsByMunAndBrgy.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\CRListOfAlumniPerBatchAndProgram.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRListOfAlumniPerBatchAndProgram.rpt</DependentUpon>
+    </Compile>
     <Compile Include="Reports\CRListofIPStudents.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -343,6 +348,10 @@
     <EmbeddedResource Include="Reports\CRApplicantsByMunAndBrgy.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRApplicantsByMunAndBrgy.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CRListOfAlumniPerBatchAndProgram.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRListOfAlumniPerBatchAndProgram.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CRListofIPStudents.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
