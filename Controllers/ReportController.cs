@@ -258,7 +258,7 @@ namespace WebApplication1.Controllers
 
         public ActionResult StatisticsOfScholarsBySex() // https://localhost:44357/Report/StatisticsOfScholarsBySex
         {
-            ReportClass rpt = new CRStatisticsOfScholarsBySex1();
+            ReportClass rpt = new CRStatisticsOfScholarsBySex();
              rpt.SetParameterValue("@batch_id", null);
 
             ApplyConnectionInfo(rpt);
@@ -289,6 +289,21 @@ namespace WebApplication1.Controllers
         public ActionResult ApplicantsPerBatchProgramCategory() // https://localhost:44357/Report/ApplicantsPerBatchProgramCategory
         {
             ReportClass rpt = new CRApplicantsPerBatchProgramCategory();
+            rpt.SetParameterValue("@batch_id", null);
+
+            ApplyConnectionInfo(rpt);
+            Stream stream = rpt.ExportToStream(ExportFormatType.PortableDocFormat);
+            rpt.Close();
+            rpt.Dispose();
+            GC.Collect();
+
+            stream.Position = 0; // Reset stream
+            return File(stream, "application/pdf");
+        }
+
+        public ActionResult ListofAlumniperbatchandprogram() // https://localhost:44357/Report/ListofAlumniperbatchandprogra
+        {
+            ReportClass rpt = new CRListOfAlumniPerBatchAndProgram();
             rpt.SetParameterValue("@batch_id", null);
 
             ApplyConnectionInfo(rpt);

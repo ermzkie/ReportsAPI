@@ -16,14 +16,14 @@ namespace WebApplication1.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CRListofIPStudents : ReportClass {
+    public class CRListOfAlumniPerBatchAndProgram : ReportClass {
         
-        public CRListofIPStudents() {
+        public CRListOfAlumniPerBatchAndProgram() {
         }
         
         public override string ResourceName {
             get {
-                return "CRListofIPStudents.rpt";
+                return "CRListOfAlumniPerBatchAndProgram.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace WebApplication1.Reports {
         
         public override string FullResourceName {
             get {
-                return "WebApplication1.Reports.CRListofIPStudents.rpt";
+                return "WebApplication1.Reports.CRListOfAlumniPerBatchAndProgram.rpt";
             }
             set {
                 // Do nothing
@@ -58,7 +58,7 @@ namespace WebApplication1.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section2 {
             get {
                 return this.ReportDefinition.Sections[1];
             }
@@ -66,7 +66,7 @@ namespace WebApplication1.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section2 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace WebApplication1.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,33 +82,17 @@ namespace WebApplication1.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_batch_id {
-            get {
-                return this.DataDefinition.ParameterFields[0];
+                return this.ReportDefinition.Sections[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCRListofIPStudents : Component, ICachedReport {
+    public class CachedCRListOfAlumniPerBatchAndProgram : Component, ICachedReport {
         
-        public CachedCRListofIPStudents() {
+        public CachedCRListOfAlumniPerBatchAndProgram() {
         }
         
         [Browsable(false)]
@@ -145,7 +129,7 @@ namespace WebApplication1.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CRListofIPStudents rpt = new CRListofIPStudents();
+            CRListOfAlumniPerBatchAndProgram rpt = new CRListOfAlumniPerBatchAndProgram();
             rpt.Site = this.Site;
             return rpt;
         }
