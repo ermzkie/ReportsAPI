@@ -1,17 +1,56 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    ViewBag.Title = "Reports";
 }
-<div>
-    <p class="display-4" style="font-size: 20px;">Reports</p>
-</div>
-<div style="display: flex; gap: 30px;">
-    <div style="flex: 1; border: 1px solid #ccc; padding: 16px; background-color: #f9f9f9;">
-        <p>Filter</p>
-    </div>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 
-    <div style="flex: 1; border: 1px solid #ccc; padding: 16px; background-color: #f9f9f9;">
-        <p>Preview</p>
+<div class="container-fluid mt-3">
+    <h2>Reports</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Filter
+                </div>
+                <div class="card-body">
+                    <form id="reportFilterForm">
+                        <div class="mb-3">
+                            <label for="reportType" class="form-label fw-bold">Type of Report</label>
+                            <select class="form-select" id="reportType" name="reportType">
+                                <option value="ApplicantsByMunAndBrgy">Applicants by Municipality and Barangay</option>
+                                <option value="ApplicantsPerBatchProgramCategory">Applicants Per Batch, Program, and Category</option>
+                                <option value="ApplicationFormBack">Application Form Back</option>
+                                <option value="ApplicationFormFront">Application Form Front</option>
+                                <option value="ListofAlumniperbatchandprogram">List of Alumni Per Batch and Program</option>
+                                <option value="ListOfIPStudents">List of IP Students</option>
+                                <option value="ScholarsByProgramCategory">Load Reports Scholars By Program and Category</option>
+                                <option value="StatisticsOfScholarsBySex">Statistics of Scholars By Sex</option>
+                            </select>
+                        </div>
+                        <a class="btn btn-primary w-100" href="#" id="previewBtn">
+                            <i class="bi bi-search"></i> Preview
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Preview
+                </div>
+                <div class="card-body" style="height: 500px;">
+                    <iframe id="reportPreview" style="width: 100%; height: 100%; border: none;"></iframe>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
+<!-- Global variable for base URL -->
+<script>
+    var reportBaseUrl = '@Url.Action("Index", "Report")'.replace('/Index', '');
+</script>
+
+<!-- Reference to external JavaScript file -->
+<script src="~/Scripts/report.js"></script>

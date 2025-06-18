@@ -315,7 +315,34 @@ namespace WebApplication1.Controllers
             stream.Position = 0; // Reset stream
             return File(stream, "application/pdf");
         }
+        public ActionResult ApplicationFormBack() // https://localhost:44357/Report/ApplicantsByMunAndBrgy
+        {
+            ReportClass rpt = new CRApplicationFormBack();
+            
 
+            ApplyConnectionInfo(rpt);
+            Stream stream = rpt.ExportToStream(ExportFormatType.PortableDocFormat);
+            rpt.Close();
+            rpt.Dispose();
+            GC.Collect();
+
+            stream.Position = 0; // Reset stream
+            return File(stream, "application/pdf");
+        }
+        public ActionResult ApplicationFormFront() // https://localhost:44357/Report/ApplicantsByMunAndBrgy
+        {
+            ReportClass rpt = new CRApplicationFormFront();
+            
+
+            ApplyConnectionInfo(rpt);
+            Stream stream = rpt.ExportToStream(ExportFormatType.PortableDocFormat);
+            rpt.Close();
+            rpt.Dispose();
+            GC.Collect();
+
+            stream.Position = 0; // Reset stream
+            return File(stream, "application/pdf");
+        }
         public static void ApplyConnectionInfo(ReportDocument report)
         {
             // Connection info for OLE DB (ADO)
