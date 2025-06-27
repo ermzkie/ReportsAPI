@@ -10,26 +10,31 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-header bg-primary text-white">
-                    Filter
+                    Filters
                 </div>
                 <div class="card-body">
                     <form id="reportFilterForm">
                         <div class="mb-3">
                             <label for="reportType" class="form-label fw-bold">Type of Report</label>
                             <select class="form-select" id="reportType" name="reportType">
-                                <option value="ApplicantsByMunAndBrgy">Applicants by Municipality and Barangay</option>
-                                <option value="ApplicantsPerBatchProgramCategory">Applicants Per Batch, Program, and Category</option>
-                                <option value="ApplicationFormBack">Application Form Back</option>
-                                <option value="ApplicationFormFront">Application Form Front</option>
-                                <option value="ListofAlumniperbatchandprogram">List of Alumni Per Batch and Program</option>
-                                <option value="ListOfIPStudents">List of IP Students</option>
-                                <option value="ScholarsByProgramCategory">Load Reports Scholars By Program and Category</option>
-                                <option value="StatisticsOfScholarsBySex">Statistics of Scholars By Sex</option>
+                                <option value="ApplicantsByMunAndBrgy" data-bybatch="false">Applicants by Municipality and Barangay</option>
+                                <option value="ApplicantsPerBatchProgramCategory" data-bybatch="true">Applicants Per Batch, Program, and Category</option>
+                                <option value="ListofAlumniperbatchandprogram" data-bybatch="true">List of Alumni Per Batch and Program</option>
+                                <option value="ListOfIPStudents" data-bybatch="false">List of IP Students</option>
+                                <option value="ScholarsByProgramCategory" data-bybatch="false">Scholars By Program and Category</option>
+                                <option value="StatisticsOfScholarsBySex" data-bybatch="false">Statistics of Scholars By Sex</option>
                             </select>
+                        </div>
+                        <div class="form-group" id="batchSelectGroup" style="display:none;">
+                            <label for="batch_no">Batch No</label>
+                            <select id="batch_no" name="batch_no" class="form-select"></select>
                         </div>
                         <a class="btn btn-primary w-100" href="#" id="previewBtn">
                             <i class="bi bi-search"></i> Preview
                         </a>
+                        <hr>
+
+
                     </form>
                 </div>
             </div>
@@ -53,4 +58,4 @@
 </script>
 
 <!-- Reference to external JavaScript file -->
-<script src="~/Scripts/report.js"></script>
+<script src="~/Scripts/userdefined/Report.js"></script>
