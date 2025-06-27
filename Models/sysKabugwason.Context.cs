@@ -28,6 +28,280 @@ namespace WebApplication1.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<AcademicAward> AcademicAwards { get; set; }
+        public DbSet<Alumnus> Alumni { get; set; }
+        public DbSet<ApplicationForm> ApplicationForms { get; set; }
+        public DbSet<ApplicationFormStatusLog> ApplicationFormStatusLogs { get; set; }
+        public DbSet<ApplicationRequirement> ApplicationRequirements { get; set; }
+        public DbSet<Batch> Batches { get; set; }
+        public DbSet<ContactPerson> ContactPersons { get; set; }
+        public DbSet<Document> Documents { get; set; }
+        public DbSet<ExamSchedule> ExamSchedules { get; set; }
+        public DbSet<LogReconsideration> LogReconsiderations { get; set; }
+        public DbSet<LogrefApplicationStatu> LogrefApplicationStatus { get; set; }
+        public DbSet<LogScholar> LogScholars { get; set; }
+        public DbSet<LogStudent> LogStudents { get; set; }
+        public DbSet<Payroll> Payrolls { get; set; }
+        public DbSet<PayrollBenefit> PayrollBenefits { get; set; }
+        public DbSet<PayrollType> PayrollTypes { get; set; }
+        public DbSet<ProgramBenefit> ProgramBenefits { get; set; }
+        public DbSet<ProgramRequirement> ProgramRequirements { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
+        public DbSet<Reconsideration> Reconsiderations { get; set; }
+        public DbSet<refApplicationStatu> refApplicationStatus { get; set; }
+        public DbSet<refBank> refBanks { get; set; }
+        public DbSet<refBarangay> refBarangays { get; set; }
+        public DbSet<refBenefit> refBenefits { get; set; }
+        public DbSet<refCategory> refCategories { get; set; }
+        public DbSet<refCityMunicipality> refCityMunicipalities { get; set; }
+        public DbSet<refCivilStatu> refCivilStatus { get; set; }
+        public DbSet<refCourse> refCourses { get; set; }
+        public DbSet<refFactor> refFactors { get; set; }
+        public DbSet<refLicensureExam> refLicensureExams { get; set; }
+        public DbSet<refNameExtension> refNameExtensions { get; set; }
+        public DbSet<refProgram> refPrograms { get; set; }
+        public DbSet<refProvince> refProvinces { get; set; }
+        public DbSet<refRelationship> refRelationships { get; set; }
+        public DbSet<refReligion> refReligions { get; set; }
+        public DbSet<refRequirement> refRequirements { get; set; }
+        public DbSet<refScholarStatu> refScholarStatus { get; set; }
+        public DbSet<refSchool> refSchools { get; set; }
+        public DbSet<refSchoolYear> refSchoolYears { get; set; }
+        public DbSet<refSemester> refSemesters { get; set; }
+        public DbSet<refSignatory> refSignatories { get; set; }
+        public DbSet<refStudentType> refStudentTypes { get; set; }
+        public DbSet<refUserRole> refUserRoles { get; set; }
+        public DbSet<Scholar> Scholars { get; set; }
+        public DbSet<ScholarBankAccount> ScholarBankAccounts { get; set; }
+        public DbSet<SchoolRecord> SchoolRecords { get; set; }
+        public DbSet<Sibling> Siblings { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserAccess> UserAccesses { get; set; }
+        public DbSet<scolarwid> scolarwids { get; set; }
+        public DbSet<viewApplicationRequirement> viewApplicationRequirements { get; set; }
+        public DbSet<viewRequirementList> viewRequirementLists { get; set; }
+        public DbSet<viewScholarsByCategory> viewScholarsByCategories { get; set; }
+    
+        public virtual ObjectResult<Nullable<int>> AddUserAccount(string username, string password, string firstName, string middleName, string lastName, Nullable<int> nameExtId, string email, string mobileNumber)
+        {
+            var usernameParameter = username != null ?
+                new ObjectParameter("username", username) :
+                new ObjectParameter("username", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            var firstNameParameter = firstName != null ?
+                new ObjectParameter("firstName", firstName) :
+                new ObjectParameter("firstName", typeof(string));
+    
+            var middleNameParameter = middleName != null ?
+                new ObjectParameter("middleName", middleName) :
+                new ObjectParameter("middleName", typeof(string));
+    
+            var lastNameParameter = lastName != null ?
+                new ObjectParameter("lastName", lastName) :
+                new ObjectParameter("lastName", typeof(string));
+    
+            var nameExtIdParameter = nameExtId.HasValue ?
+                new ObjectParameter("nameExtId", nameExtId) :
+                new ObjectParameter("nameExtId", typeof(int));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var mobileNumberParameter = mobileNumber != null ?
+                new ObjectParameter("mobileNumber", mobileNumber) :
+                new ObjectParameter("mobileNumber", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("AddUserAccount", usernameParameter, passwordParameter, firstNameParameter, middleNameParameter, lastNameParameter, nameExtIdParameter, emailParameter, mobileNumberParameter);
+        }
+    
+        public virtual ObjectResult<AuthenticateLogin_Result> AuthenticateLogin(string username, string password)
+        {
+            var usernameParameter = username != null ?
+                new ObjectParameter("username", username) :
+                new ObjectParameter("username", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AuthenticateLogin_Result>("AuthenticateLogin", usernameParameter, passwordParameter);
+        }
+    
+        public virtual ObjectResult<ChangePassword_Result> ChangePassword(Nullable<int> userId, string oldPassword, string newPassword)
+        {
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("userId", userId) :
+                new ObjectParameter("userId", typeof(int));
+    
+            var oldPasswordParameter = oldPassword != null ?
+                new ObjectParameter("oldPassword", oldPassword) :
+                new ObjectParameter("oldPassword", typeof(string));
+    
+            var newPasswordParameter = newPassword != null ?
+                new ObjectParameter("newPassword", newPassword) :
+                new ObjectParameter("newPassword", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ChangePassword_Result>("ChangePassword", userIdParameter, oldPasswordParameter, newPasswordParameter);
+        }
+    
+        public virtual ObjectResult<GenerateStatistics_Result> GenerateStatistics(Nullable<int> yearId, Nullable<int> batchId, Nullable<int> programId)
+        {
+            var yearIdParameter = yearId.HasValue ?
+                new ObjectParameter("yearId", yearId) :
+                new ObjectParameter("yearId", typeof(int));
+    
+            var batchIdParameter = batchId.HasValue ?
+                new ObjectParameter("batchId", batchId) :
+                new ObjectParameter("batchId", typeof(int));
+    
+            var programIdParameter = programId.HasValue ?
+                new ObjectParameter("programId", programId) :
+                new ObjectParameter("programId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GenerateStatistics_Result>("GenerateStatistics", yearIdParameter, batchIdParameter, programIdParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> GetCountActiveApplications()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetCountActiveApplications");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> GetCountActiveScholars()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetCountActiveScholars");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> GetCountAlumni()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetCountAlumni");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> GetCountNewApplications()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetCountNewApplications");
+        }
+    
+        public virtual ObjectResult<GetScholarsWithBenefits_Result> GetScholarsWithBenefits()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetScholarsWithBenefits_Result>("GetScholarsWithBenefits");
+        }
+    
+        public virtual int GetScholarsWithBenefitsv2()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GetScholarsWithBenefitsv2");
+        }
+    
+        public virtual ObjectResult<GetSelectedAlumni_Result> GetSelectedAlumni(Nullable<int> alumniId)
+        {
+            var alumniIdParameter = alumniId.HasValue ?
+                new ObjectParameter("alumniId", alumniId) :
+                new ObjectParameter("alumniId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetSelectedAlumni_Result>("GetSelectedAlumni", alumniIdParameter);
+        }
+    
+        public virtual ObjectResult<GetSelectedBatch_Result> GetSelectedBatch(Nullable<int> batchId)
+        {
+            var batchIdParameter = batchId.HasValue ?
+                new ObjectParameter("batchId", batchId) :
+                new ObjectParameter("batchId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetSelectedBatch_Result>("GetSelectedBatch", batchIdParameter);
+        }
+    
+        public virtual ObjectResult<GetSelectedScholar_Result> GetSelectedScholar(Nullable<int> scholarId)
+        {
+            var scholarIdParameter = scholarId.HasValue ?
+                new ObjectParameter("scholarId", scholarId) :
+                new ObjectParameter("scholarId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetSelectedScholar_Result>("GetSelectedScholar", scholarIdParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<System.DateTime>> GetServerDateTime()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<System.DateTime>>("GetServerDateTime");
+        }
+    
+        public virtual ObjectResult<GetStudentDetails_Result> GetStudentDetails(Nullable<int> studentId)
+        {
+            var studentIdParameter = studentId.HasValue ?
+                new ObjectParameter("studentId", studentId) :
+                new ObjectParameter("studentId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetStudentDetails_Result>("GetStudentDetails", studentIdParameter);
+        }
+    
+        public virtual ObjectResult<GetUserDetails_Result> GetUserDetails(Nullable<int> userId)
+        {
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("userId", userId) :
+                new ObjectParameter("userId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetUserDetails_Result>("GetUserDetails", userIdParameter);
+        }
+    
+        public virtual ObjectResult<LoadApplicants_Result> LoadApplicants()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadApplicants_Result>("LoadApplicants");
+        }
+    
+        public virtual ObjectResult<LoadApplicationHistory_Result> LoadApplicationHistory(Nullable<int> student_id)
+        {
+            var student_idParameter = student_id.HasValue ?
+                new ObjectParameter("student_id", student_id) :
+                new ObjectParameter("student_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadApplicationHistory_Result>("LoadApplicationHistory", student_idParameter);
+        }
+    
+        public virtual ObjectResult<LoadCourses_Result> LoadCourses()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadCourses_Result>("LoadCourses");
+        }
+    
+        public virtual int LoadProgramsforApplication(Nullable<int> prog_id)
+        {
+            var prog_idParameter = prog_id.HasValue ?
+                new ObjectParameter("prog_id", prog_id) :
+                new ObjectParameter("prog_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("LoadProgramsforApplication", prog_idParameter);
+        }
+    
+        public virtual ObjectResult<LoadReconsideration_Result> LoadReconsideration()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadReconsideration_Result>("LoadReconsideration");
+        }
+    
+        public virtual ObjectResult<LoadReligions_Result> LoadReligions()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadReligions_Result>("LoadReligions");
+        }
+    
+        public virtual ObjectResult<LoadReportApplicantsByMunAndBrgy_Result> LoadReportApplicantsByMunAndBrgy(Nullable<int> batch_id)
+        {
+            var batch_idParameter = batch_id.HasValue ?
+                new ObjectParameter("batch_id", batch_id) :
+                new ObjectParameter("batch_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadReportApplicantsByMunAndBrgy_Result>("LoadReportApplicantsByMunAndBrgy", batch_idParameter);
+        }
+    
+        public virtual ObjectResult<LoadReportApplicantsPerBatchProgramCategory_Result> LoadReportApplicantsPerBatchProgramCategory(Nullable<int> batch_id)
+        {
+            var batch_idParameter = batch_id.HasValue ?
+                new ObjectParameter("batch_id", batch_id) :
+                new ObjectParameter("batch_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadReportApplicantsPerBatchProgramCategory_Result>("LoadReportApplicantsPerBatchProgramCategory", batch_idParameter);
+        }
     
         public virtual ObjectResult<LoadReportApplicationForm_Result> LoadReportApplicationForm(Nullable<int> afid)
         {
@@ -36,6 +310,129 @@ namespace WebApplication1.Models
                 new ObjectParameter("afid", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadReportApplicationForm_Result>("LoadReportApplicationForm", afidParameter);
+        }
+    
+        public virtual ObjectResult<LoadReportListOfIPStudents_Result> LoadReportListOfIPStudents(Nullable<int> batch_id)
+        {
+            var batch_idParameter = batch_id.HasValue ?
+                new ObjectParameter("batch_id", batch_id) :
+                new ObjectParameter("batch_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadReportListOfIPStudents_Result>("LoadReportListOfIPStudents", batch_idParameter);
+        }
+    
+        public virtual ObjectResult<LoadReportListOfScholarsPerProgram_Result> LoadReportListOfScholarsPerProgram(Nullable<int> program_id)
+        {
+            var program_idParameter = program_id.HasValue ?
+                new ObjectParameter("program_id", program_id) :
+                new ObjectParameter("program_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadReportListOfScholarsPerProgram_Result>("LoadReportListOfScholarsPerProgram", program_idParameter);
+        }
+    
+        public virtual ObjectResult<LoadReportListofStudentswithReconsideration_Result> LoadReportListofStudentswithReconsideration(Nullable<int> sy, Nullable<int> sem)
+        {
+            var syParameter = sy.HasValue ?
+                new ObjectParameter("sy", sy) :
+                new ObjectParameter("sy", typeof(int));
+    
+            var semParameter = sem.HasValue ?
+                new ObjectParameter("sem", sem) :
+                new ObjectParameter("sem", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadReportListofStudentswithReconsideration_Result>("LoadReportListofStudentswithReconsideration", syParameter, semParameter);
+        }
+    
+        public virtual ObjectResult<LoadReportScholarProfile_Result> LoadReportScholarProfile(Nullable<int> student_id)
+        {
+            var student_idParameter = student_id.HasValue ?
+                new ObjectParameter("student_id", student_id) :
+                new ObjectParameter("student_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadReportScholarProfile_Result>("LoadReportScholarProfile", student_idParameter);
+        }
+    
+        public virtual ObjectResult<LoadReportScholarsByProgramCategory_Result> LoadReportScholarsByProgramCategory(Nullable<int> batch_id)
+        {
+            var batch_idParameter = batch_id.HasValue ?
+                new ObjectParameter("batch_id", batch_id) :
+                new ObjectParameter("batch_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadReportScholarsByProgramCategory_Result>("LoadReportScholarsByProgramCategory", batch_idParameter);
+        }
+    
+        public virtual ObjectResult<LoadReportScholarsStatisticsBySex_Result> LoadReportScholarsStatisticsBySex(Nullable<int> batch_id)
+        {
+            var batch_idParameter = batch_id.HasValue ?
+                new ObjectParameter("batch_id", batch_id) :
+                new ObjectParameter("batch_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadReportScholarsStatisticsBySex_Result>("LoadReportScholarsStatisticsBySex", batch_idParameter);
+        }
+    
+        public virtual ObjectResult<LoadReportSiblings_Result> LoadReportSiblings(Nullable<int> afid)
+        {
+            var afidParameter = afid.HasValue ?
+                new ObjectParameter("afid", afid) :
+                new ObjectParameter("afid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadReportSiblings_Result>("LoadReportSiblings", afidParameter);
+        }
+    
+        public virtual ObjectResult<LoadRolesByType_Result> LoadRolesByType(string userType)
+        {
+            var userTypeParameter = userType != null ?
+                new ObjectParameter("userType", userType) :
+                new ObjectParameter("userType", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadRolesByType_Result>("LoadRolesByType", userTypeParameter);
+        }
+    
+        public virtual ObjectResult<LoadScholars_Result> LoadScholars()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadScholars_Result>("LoadScholars");
+        }
+    
+        public virtual ObjectResult<LoadSchools_Result> LoadSchools()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadSchools_Result>("LoadSchools");
+        }
+    
+        public virtual ObjectResult<LoadSiblings_Result> LoadSiblings(Nullable<int> studentid)
+        {
+            var studentidParameter = studentid.HasValue ?
+                new ObjectParameter("studentid", studentid) :
+                new ObjectParameter("studentid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadSiblings_Result>("LoadSiblings", studentidParameter);
+        }
+    
+        public virtual ObjectResult<LoadUsers_Result> LoadUsers()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadUsers_Result>("LoadUsers");
+        }
+    
+        public virtual int ResetPassword(Nullable<int> userId)
+        {
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("userId", userId) :
+                new ObjectParameter("userId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ResetPassword", userIdParameter);
+        }
+    
+        public virtual ObjectResult<TestOnly_Evaluation_Result> TestOnly_Evaluation()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TestOnly_Evaluation_Result>("TestOnly_Evaluation");
+        }
+    
+        public virtual ObjectResult<LoadReportAlumniPerBatchProgramCategory_Result> LoadReportAlumniPerBatchProgramCategory(Nullable<int> batch_id)
+        {
+            var batch_idParameter = batch_id.HasValue ?
+                new ObjectParameter("batch_id", batch_id) :
+                new ObjectParameter("batch_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoadReportAlumniPerBatchProgramCategory_Result>("LoadReportAlumniPerBatchProgramCategory", batch_idParameter);
         }
     }
 }

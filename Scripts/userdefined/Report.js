@@ -39,11 +39,10 @@
         e.preventDefault();
         const selectedValue = reportType.value;
         let url = reportBaseUrl + "/" + selectedValue;
-        const batchNo = $("#batch_no").val();
-        console.log(batchNo)
+        const batchId = $("#batch_no").val();
         const isByBatch = $("#reportType option:selected").data("bybatch");
-        if (isByBatch && batchNo) {
-            url += "?batch_no=" + batchNo;
+        if (isByBatch && batchId) {
+            url += "?batch_id=" + batchId;
         }
         document.getElementById("reportPreview").src = url;
     });

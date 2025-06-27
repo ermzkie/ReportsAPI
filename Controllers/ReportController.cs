@@ -20,7 +20,7 @@ namespace WebApplication1.Controllers
 {
     public class ReportController : Controller
     {
-        private sysKabugwasonEntities2 db = new sysKabugwasonEntities2();
+        private sysKabugwasonEntities db = new sysKabugwasonEntities();
 
         public ActionResult Index()
         {
@@ -320,17 +320,20 @@ namespace WebApplication1.Controllers
 
         public ActionResult ListOfAlumniPerBatchAndProgram(int? batch_id)
         {
-            var data = db.LoadReportAlumniPerBatchProgramCategory(batch_id, 0).ToList();
+            var data = db.LoadReportAlumniPerBatchProgramCategory(batch_id).ToList();
             if (data.Count == 0)
             {
                 return Content($"No data found for the selected batch (batch_id={batch_id}).");
             }
             ReportClass rpt = new CRListOfAlumniPerBatchAndProgram();
-            rpt.SetDataSource(data);
+            rpt.SetParameterValue("@batch_id", batch_id);
+
+            ApplyConnectionInfo(rpt);
             Stream stream = rpt.ExportToStream(ExportFormatType.PortableDocFormat);
             rpt.Close();
             rpt.Dispose();
             GC.Collect();
+
             stream.Position = 0;
             return File(stream, "application/pdf");
         }
@@ -367,11 +370,9 @@ namespace WebApplication1.Controllers
         public JsonResult LoadBatches()
         {
             var batches = db.Batches
-                .GroupBy(b => b.batch_no)
-                .Select(g => g.FirstOrDefault())
                 .OrderBy(b => b.batch_no)
                 .ToList()
-                .Select(b => new { value = b.batch_no, text = b.batch_no.ToString() });
+                .Select(b => new { value = b.batch_id, text = b.batch_no.ToString() });
 
             return Json(batches, JsonRequestBehavior.AllowGet);
         }
