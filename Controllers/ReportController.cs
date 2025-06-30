@@ -1,17 +1,20 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using QRCoder;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
-using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Shared;
-using QRCoder;
 using WebApplication1.Dataset;
 using WebApplication1.Models;
 using WebApplication1.Reports;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace WebApplication1.Controllers
 {
@@ -21,6 +24,11 @@ namespace WebApplication1.Controllers
 
         public ActionResult Index()
         {
+
+            var batches = db.Batches.Select(b => new { value = b.batch_no, text = b.batch_no }).ToList();
+            ViewBag.Batches = new SelectList(batches, "value", "text");
+
+
             return View();
         }
 
@@ -243,7 +251,7 @@ namespace WebApplication1.Controllers
 
         public ActionResult ListOfIPStudents() // https://localhost:44357/Report/ListOfIPStudents
         {
-            ReportClass rpt  = new CRListofIPStudents();
+            ReportClass rpt = new CRListofIPStudents();
             rpt.SetParameterValue("@batch_id", null);
 
             ApplyConnectionInfo(rpt);
@@ -259,7 +267,7 @@ namespace WebApplication1.Controllers
         public ActionResult StatisticsOfScholarsBySex() // https://localhost:44357/Report/StatisticsOfScholarsBySex
         {
             ReportClass rpt = new CRStatisticsOfScholarsBySex();
-             rpt.SetParameterValue("@batch_id", null);
+            rpt.SetParameterValue("@batch_id", null);
 
             ApplyConnectionInfo(rpt);
             Stream stream = rpt.ExportToStream(ExportFormatType.PortableDocFormat);
@@ -271,7 +279,7 @@ namespace WebApplication1.Controllers
             return File(stream, "application/pdf");
         }
 
-        public ActionResult ScholarsByProgramCategory() // https://localhost:44357/Report/ScholarsByProgramCategory
+        public ActionResult ScholarsByProgramCategory(int? batch_no = null) // https://localhost:44357/Report/ScholarsByProgramCategory
         {
             ReportClass rpt = new CRLoadReportsScholarsByProgramCategory();
             rpt.SetParameterValue("@batch_id", null);
@@ -286,10 +294,67 @@ namespace WebApplication1.Controllers
             return File(stream, "application/pdf");
         }
 
-        public ActionResult ApplicantsPerBatchProgramCategory() // https://localhost:44357/Report/ApplicantsPerBatchProgramCategory
+        public ActionResult ApplicantsPerBatchProgramCategory(int? batch_no)
         {
+            int? batch_id = null;
+            if (batch_no.HasValue)
+            {
+                var batch = db.Batches.FirstOrDefault(b => b.batch_no == batch_no.Value);
+                batch_id = batch?.batch_id;
+            }
+
+            var data = db.LoadReportApplicantsPerBatchProgramCategory(batch_id).ToList();
+            if (data.Count == 0)
+            {
+                return Content("No data found for the selected batch.");
+            }
             ReportClass rpt = new CRApplicantsPerBatchProgramCategory();
-            rpt.SetParameterValue("@batch_id", null);
+            rpt.SetDataSource(data);
+            Stream stream = rpt.ExportToStream(ExportFormatType.PortableDocFormat);
+            rpt.Close();
+            rpt.Dispose();
+            GC.Collect();
+            stream.Position = 0;
+            return File(stream, "application/pdf");
+        }
+
+        public ActionResult ListOfAlumniPerBatchAndProgram(int? batch_id)
+        {
+            var data = db.LoadReportAlumniPerBatchProgramCategory(batch_id).ToList();
+            if (data.Count == 0)
+            {
+                return Content($"No data found for the selected batch (batch_id={batch_id}).");
+            }
+            ReportClass rpt = new CRListOfAlumniPerBatchAndProgram();
+            rpt.SetParameterValue("@batch_id", batch_id);
+
+            ApplyConnectionInfo(rpt);
+            Stream stream = rpt.ExportToStream(ExportFormatType.PortableDocFormat);
+            rpt.Close();
+            rpt.Dispose();
+            GC.Collect();
+
+            stream.Position = 0;
+            return File(stream, "application/pdf");
+        }
+        public ActionResult ApplicationFormBack() // https://localhost:44357/Report/ApplicationFormBack
+        {
+            ReportClass rpt = new CRApplicationFormBack();
+
+
+            ApplyConnectionInfo(rpt);
+            Stream stream = rpt.ExportToStream(ExportFormatType.PortableDocFormat);
+            rpt.Close();
+            rpt.Dispose();
+            GC.Collect();
+
+            stream.Position = 0; // Reset stream
+            return File(stream, "application/pdf");
+        }
+        public ActionResult ApplicationFormFront() // https://localhost:44357/Report/ApplicationFormFront
+        {
+            ReportClass rpt = new CRApplicationFormFront();
+
 
             ApplyConnectionInfo(rpt);
             Stream stream = rpt.ExportToStream(ExportFormatType.PortableDocFormat);
@@ -301,19 +366,15 @@ namespace WebApplication1.Controllers
             return File(stream, "application/pdf");
         }
 
-        public ActionResult ListofAlumniperbatchandprogram() // https://localhost:44357/Report/ListofAlumniperbatchandprogra
+        //OJT - NEW 
+        public JsonResult LoadBatches()
         {
-            ReportClass rpt = new CRListOfAlumniPerBatchAndProgram();
-            rpt.SetParameterValue("@batch_id", null);
+            var batches = db.Batches
+                .OrderBy(b => b.batch_no)
+                .ToList()
+                .Select(b => new { value = b.batch_id, text = b.batch_no.ToString() });
 
-            ApplyConnectionInfo(rpt);
-            Stream stream = rpt.ExportToStream(ExportFormatType.PortableDocFormat);
-            rpt.Close();
-            rpt.Dispose();
-            GC.Collect();
-
-            stream.Position = 0; // Reset stream
-            return File(stream, "application/pdf");
+            return Json(batches, JsonRequestBehavior.AllowGet);
         }
 
         public static void ApplyConnectionInfo(ReportDocument report)
@@ -358,4 +419,3 @@ namespace WebApplication1.Controllers
         }
     }
 }
-

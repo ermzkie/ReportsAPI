@@ -154,7 +154,241 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AcademicAward.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumnus.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ApplicationForm.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ApplicationFormStatusLog.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ApplicationRequirement.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AuthenticateLogin_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Batch.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChangePassword_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContactPerson.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Document.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExamSchedule.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GenerateStatistics_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetScholarsWithBenefits_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSelectedAlumni_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSelectedBatch_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSelectedScholar_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetStudentDetails_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetUserDetails_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadApplicants_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadApplicationHistory_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadCourses_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadReconsideration_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadReligions_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadReportAlumniPerBatchProgramCategory_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadReportApplicantsByMunAndBrgy_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadReportApplicantsPerBatchProgramCategory_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\LoadReportApplicationForm_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadReportListOfIPStudents_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadReportListOfScholarsPerProgram_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadReportListofStudentswithReconsideration_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadReportScholarProfile_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadReportScholarsByProgramCategory_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadReportScholarsStatisticsBySex_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadReportSiblings_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadRolesByType_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadScholars_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadSchools_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadSiblings_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoadUsers_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LogReconsideration.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LogrefApplicationStatu.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LogScholar.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LogStudent.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payroll.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayrollBenefit.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayrollType.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProgramBenefit.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProgramRequirement.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rating.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Reconsideration.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refApplicationStatu.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refBank.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refBarangay.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refBenefit.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refCategory.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refCityMunicipality.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refCivilStatu.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refCourse.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refFactor.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refLicensureExam.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refNameExtension.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refProgram.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refProvince.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refRelationship.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refReligion.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refRequirement.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refScholarStatu.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refSchool.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refSchoolYear.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refSemester.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refSignatory.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refStudentType.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refUserRole.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scholar.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ScholarBankAccount.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SchoolRecord.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\scolarwid.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sibling.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Student.cs">
       <DependentUpon>sysKabugwason.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysKabugwason.Context.cs">
@@ -171,6 +405,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>sysKabugwason.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TestOnly_Evaluation_Result.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserAccess.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\viewApplicationRequirement.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\viewRequirementList.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\viewScholarsByCategory.cs">
+      <DependentUpon>sysKabugwason.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\CRApplicationFormFront.cs">
@@ -244,8 +496,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\sysKabugwason.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>sysKabugwason.Context.cs</LastGenOutput>
       <DependentUpon>sysKabugwason.edmx</DependentUpon>
+      <LastGenOutput>sysKabugwason.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\sysKabugwason.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -287,6 +539,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\userdefined\report.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

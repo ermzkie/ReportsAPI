@@ -4,7 +4,116 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="db56e07917d54dbbb76de250f42ac69d" Name="Diagram1" />
+      <Diagram DiagramId="cde7dfc15f854082bd908c169deb9a12" Name="Diagram1">
+        <EntityTypeShape EntityType="sysKabugwasonModel.AcademicAward" Width="1.5" PointX="5.25" PointY="45.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.Alumnus" Width="1.5" PointX="12.75" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.ApplicationForm" Width="1.5" PointX="5.25" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.ApplicationFormStatusLog" Width="1.5" PointX="10.5" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.ApplicationRequirement" Width="1.5" PointX="7.5" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.Batch" Width="1.5" PointX="3" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.ContactPerson" Width="1.5" PointX="5.25" PointY="48.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.Document" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.ExamSchedule" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.LogReconsideration" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.LogrefApplicationStatu" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.LogScholar" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.LogStudent" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.Payroll" Width="1.5" PointX="8.25" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.PayrollBenefit" Width="1.5" PointX="15.75" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.PayrollType" Width="1.5" PointX="6" PointY="36.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.ProgramBenefit" Width="1.5" PointX="5.25" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.ProgramRequirement" Width="1.5" PointX="7.5" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.Rating" Width="1.5" PointX="10.5" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.Reconsideration" Width="1.5" PointX="12.75" PointY="38" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refApplicationStatu" Width="1.5" PointX="8.25" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refBank" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refBarangay" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refBenefit" Width="1.5" PointX="13.5" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refCategory" Width="1.5" PointX="3" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refCityMunicipality" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refCivilStatu" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refCourse" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refFactor" Width="1.5" PointX="3" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refLicensureExam" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refNameExtension" Width="1.5" PointX="0.75" PointY="45.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refProgram" Width="1.5" PointX="0.75" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refProvince" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refRelationship" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refReligion" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refRequirement" Width="1.5" PointX="5.25" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refScholarStatu" Width="1.5" PointX="8.25" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refSchool" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refSchoolYear" Width="1.5" PointX="0.75" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refSemester" Width="1.5" PointX="0.75" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refSignatory" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refStudentType" Width="1.5" PointX="0.75" PointY="48.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.refUserRole" Width="1.5" PointX="5.75" PointY="57.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.Scholar" Width="1.5" PointX="10.5" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.ScholarBankAccount" Width="1.5" PointX="12.75" PointY="42.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.SchoolRecord" Width="1.5" PointX="15.75" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.Sibling" Width="1.5" PointX="5.25" PointY="52.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.Student" Width="1.5" PointX="3" PointY="43.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.User" Width="1.5" PointX="0.75" PointY="50.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.UserAccess" Width="1.5" PointX="8" PointY="52.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.scolarwid" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.viewApplicationRequirement" Width="1.5" PointX="6.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.viewRequirementList" Width="1.5" PointX="8.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sysKabugwasonModel.viewScholarsByCategory" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_AcademicAwards_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Alumni_Scholar" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Alumni_SchoolYear" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_ApplicationForm_Batch" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_ApplicationForm_ExamSchedule" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_ApplicationForm_refCourse" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_ApplicationForm_refSchool" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_ApplicationForm_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_ApplicationFormStatusLogs_ApplicationForm1" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_ApplicationRequirements_ApplicationForm" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Ratings_ApplicationForm" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Scholar_ApplicationForm" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_ApplicationFormStatusLogs_ApplicationStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_ApplicationRequirements_Requirements" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Batch_Program" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Batch_SchoolYear" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Batch_Semester" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Payroll_Batch" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Scholar_Batch" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_ContactPerson_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_ExamSchedule_School" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK__PayrollBe__payro__25518C17" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK__PayrollBe__payro__58D1301D" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Payroll_PayrollType" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Payroll_refSemester" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Payroll_User" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_PayrollBenefit_refBenefit" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_PayrollBenefit_Scholar" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_PayrollBenefit_User" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_ProgramBenefit_refBenefit" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_ProgramBenefit_refCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_ProgramBenefit_refProgram" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_ProgramBenefit_User" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_ProgramRequirements_Requirements" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Ratings_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Reconsideration_Scholar" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Category_Program" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Scholar_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Scholar_refCourse" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_SchoolRecord_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Factor_Program" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Student_NameExtension" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_User_NameExtension" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Scholar_Scholar" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Scholar_refSchool" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_SchoolRecord_School" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Students_StudentType" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_UserAccess_UserRole" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Scholar_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_ScholarBankAccount_Scholar" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_SchoolRecord_Scholar" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Sibling_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_Student_User" ManuallyRouted="false" />
+        <AssociationConnector Association="sysKabugwasonModel.FK_UserAccess_User" ManuallyRouted="false" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
